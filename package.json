@@ -4,23 +4,28 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "npm run move-static && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "move-static": "cp -a ./node_modules/@pdftron/webviewer/public/. ./public/webviewer"
   },
   "dependencies": {
+    "@pdftron/webviewer": "^11.0.0",
+    "fs-extra": "^11.2.0",
+    "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106",
-    "next": "15.0.3"
+    "react-dom": "19.0.0-rc-66855b96-20241106"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "15.0.3"
+    "ts-node": "^10.9.2",
+    "typescript": "^5"
   }
 }
